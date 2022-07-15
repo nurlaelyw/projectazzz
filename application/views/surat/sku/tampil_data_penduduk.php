@@ -32,7 +32,7 @@ if (count($penduduk) < 1) {
 				<td><?= $penduduk->nama; ?></td>
 			</tr>
 			<tr>
-				<td>Dususn</td>
+				<td>Dusun</td>
 				<td>:</td>
 				<td><?= $penduduk->nama_dusun; ?></td>
 			</tr>
@@ -125,21 +125,18 @@ if (count($penduduk) < 1) {
 		            <label for="data_surat" class="control-label">Usaha</label>
 		            <input type="text" class="form-control" id="data_surat" name="data_surat" required>
 		            <span id='helpPerihal' class='help-block'>
-		              Contoh: Ternak ikan lele
 		            </span>
 		          </div>
 		          <div class="form-group">
 		            <label for="perihal" class="control-label">Perihal</label>
 		            <input type="text" class="form-control" id="perihal" name="perihal" required>
 		            <span id='helpPerihal' class='help-block'>
-		              Contoh: Permohonan peminjaman modal usaha
 		            </span>
 		          </div>
 		          <div class="form-group">
-		            <label for="tujuan" class="control-label">Tujuan</label>
+		            <label for="tujuan" class="control-label">Alamat Usaha</label>
 		            <input type="text" class="form-control" id="tujuan" name="tujuan" required>
 		            <span id='helpTujuan' class='help-block'>
-		              Contoh: Bank BRI Cabang Ciawigebang Kuningan
 		            </span>
 		          </div>
 		      </div>

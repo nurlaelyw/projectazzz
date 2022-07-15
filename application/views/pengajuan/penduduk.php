@@ -51,9 +51,9 @@
       <div class="caption">
         <h4>Surat Keterangan Usaha</h4>
         <p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pengajuanSku"
+          <a href="<?php echo base_url('pengajuan/pengajuansurat/tambah_sku') ?>" class="btn btn-primary"
           data-nik="<?= $penduduk->nik; ?>"
-          data-nama="<?= $penduduk->nama; ?>">Ajukan</button>
+          data-nama="<?= $penduduk->nama; ?>">Ajukan</a>
           <a href="<?= base_url('asset/image/Surat Keterangan Usaha.png'); ?>" class="btn btn-default" role="button">Lihat</a>
         </p>
       </div>

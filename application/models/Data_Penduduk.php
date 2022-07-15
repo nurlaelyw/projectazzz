@@ -16,4 +16,13 @@ class data_penduduk extends CI_Model {
 			return $data;
 		}
 	}
+
+	public function get_penduduk_nik($nik)
+	{
+		$this->db->select('*');
+		$this->db->from('data_penduduk');
+		$this->db->where('nik', $nik);
+		$query = $this->db->get();
+		return $query->row();
+	}
 }

@@ -5,6 +5,7 @@ class Auth extends CI_Controller {
 		parent::__construct();
 		$this->load->model('auth_model');
 		$this->load->model('penduduk_model');
+		$this->load->model('data_penduduk');
 	}
 
 	public function index()
@@ -34,7 +35,7 @@ class Auth extends CI_Controller {
 		} 
 		else {
 			$auth = $this->auth_model->auth();
-			$auth_penduduk = $this->auth_model->auth_penduduk();
+			$auth_penduduk = $this->auth_model->auth_data_penduduk();
 
 			if ($auth) {
 				$get_admin = $this->auth_model->get_admin();
@@ -49,8 +50,20 @@ class Auth extends CI_Controller {
 				redirect('surat/daftar');
 			}
 
+			// if ($auth_penduduk) {
+			// 	$penduduk = $this->penduduk_model->get_penduduk_nik($this->input->post('username'));
+				
+			// 	$session_penduduk = array(
+			// 		'hak' => 'penduduk',
+			// 		'nik' => $penduduk->nik
+			// 	);
+
+			// 	$this->session->set_userdata($session_penduduk);
+			// 	redirect('pengajuan/penduduk');
+			// }
+
 			if ($auth_penduduk) {
-				$penduduk = $this->penduduk_model->get_penduduk_nik($this->input->post('username'));
+				$penduduk = $this->data_penduduk->get_penduduk_nik($this->input->post('username'));
 				
 				$session_penduduk = array(
 					'hak' => 'penduduk',
@@ -58,7 +71,7 @@ class Auth extends CI_Controller {
 				);
 
 				$this->session->set_userdata($session_penduduk);
-				redirect('pengajuan/penduduk');
+				redirect('pengajuan/pengajuansurat/penduduk');
 			}
 
 
